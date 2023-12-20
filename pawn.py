@@ -276,19 +276,19 @@ class Pawn():
         return counter_coin
 
     def check_winner_and_runner(self,color_coin):
-        destination_reached = 0 # Check for all specific color coins
+        destination_reached = 0 
         if color_coin == "red":
             temp_store = self.red_coord_store
-            temp_delete = 0# Player index
+            temp_delete = 0
         elif color_coin == "green":
             temp_store = self.green_coord_store
-            temp_delete = 3# Player index
+            temp_delete = 3
         elif color_coin == "yellow":
             temp_store = self.yellow_coord_store
-            temp_delete = 2# Player index
+            temp_delete = 2
         else:
             temp_store = self.sky_blue_coord_store
-            temp_delete = 1# Player index
+            temp_delete = 1
 
         for take in temp_store:
             if take == 106:
@@ -297,26 +297,26 @@ class Pawn():
                 destination_reached = 0
                 break
 
-        if  destination_reached == 1:# If all coins in block reach to the destination, winner and runner check
+        if  destination_reached == 1:
             self.take_permission += 1
-            if self.take_permission == 1:# Winner check
-                messagebox.showinfo("Winner","Congrats! You are the winner")
-            elif self.take_permission == 2:# 1st runner check
-                messagebox.showinfo("Winner", "Wow! You are 1st runner")
-            elif self.take_permission == 3:# 2nd runner check
-                messagebox.showinfo("Winner", "Wow! You are 2nd runner")
+            if self.take_permission == 1:
+                messagebox.showinfo("1ª Lugar")
+            elif self.take_permission == 2:#
+                messagebox.showinfo("2ª Lugar")
+            elif self.take_permission == 3:
+                messagebox.showinfo("3ª Lugar")
 
             self.block_value_predict[temp_delete][1]['state'] = DISABLED
             self.total_people_play.remove(temp_delete)
 
             if len(self.total_people_play) == 1:
-                messagebox.showinfo("Game Over","Good bye!!!!")
+                messagebox.showinfo("Bom Jogo")
                 self.block_value_predict[0][1]['state'] = DISABLED
                 return False
             else:
                 self.time_for-=1
         else:
-            print("Winner not decided")
+            print("Vencedor nao decidido")
 
         return True
 
