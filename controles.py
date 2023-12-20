@@ -288,7 +288,7 @@ class Controles():
         if processing_result is True:
             pass
         else:
-            messagebox.showerror("Wrong input number","Please input the coin number between 1 to 4")
+            messagebox.showerror("Input Error", "Coloque um número entre 1 e 4")
             return
 
         if  color_coin == "red":

@@ -6,7 +6,6 @@ from random import randint
 from tkinter import Label, Button, Entry, DISABLED, SUNKEN
 import tkinter as tk 
 from coin_actions import CoinMovement 
-from game_logic import Game_logic
 from ButtonActions import LudoUIMethods 
 from controles import Controles
 from pawn import Pawn
@@ -21,7 +20,6 @@ class Ludo(Tabuleiro,Controles,Pawn):
 
         self.coin_actions = CoinMovement(self.root, self.canvas)
         self.ButtonActions = LudoUIMethods(self.root, self.canvas)
-        self.game_logic = Game_logic(self.root, self.canvas)
     def __init__(self, root,six_side_block,five_side_block,four_side_block,three_side_block,two_side_block,one_side_block):
         self.window = root
         # Make canvas
@@ -62,7 +60,7 @@ class Ludo(Tabuleiro,Controles,Pawn):
             self.yellow_coin_position[index] = -1
             self.sky_blue_coin_position[index] = -1
 
-        # Number to room to be traverse by specific color coin, store in that variable
+        
         self.move_red_counter = 0
         self.move_green_counter = 0
         self.move_yellow_counter = 0
@@ -79,13 +77,13 @@ class Ludo(Tabuleiro,Controles,Pawn):
         self.six_counter = 0
         self.time_for = -1
 
-        # Some variables initializes with None
+        
         self.right_star = None
         self.down_star = None
         self.left_star = None
         self.up_star = None
 
-        # By default some function call
+        # inicializar funções
         self.board_set_up()
 
         self.instruction_btn_red()
@@ -112,6 +110,5 @@ class start():
             Ludo(window,block_six_side,block_five_side,block_four_side,block_three_side,block_two_side,block_one_side)
             make_canvas = Canvas(window)  # Isso pode variar dependendo do seu código
             CoinMovement(window, make_canvas)
-            Game_logic()
             LudoUIMethods(window, make_canvas)
             window.mainloop()
