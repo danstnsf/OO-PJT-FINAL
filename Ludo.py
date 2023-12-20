@@ -94,13 +94,11 @@ class Ludo(Tabuleiro,Controles,Pawn):
         self.take_initial_control()
 class start():
     def __init__(self):
-        #if __name__ == '__main__':
             window = Tk()
             window.geometry("800x630")
             window.maxsize(800,630)
             window.minsize(800,630)
             window.title("Ludo - Projeto Final OO")
-        # window.iconbitmap('Images/ludo_icon.ico')
             block_six_side = ImageTk.PhotoImage(Image.open('Images/6_block.png').resize((33, 33)))
             block_five_side = ImageTk.PhotoImage(Image.open("Images/5_block.png").resize((33, 33)))
             block_four_side = ImageTk.PhotoImage(Image.open("Images/4_block.png").resize((33, 33)))
@@ -108,7 +106,7 @@ class start():
             block_two_side = ImageTk.PhotoImage(Image.open("Images/2_block.png").resize((33, 33)))
             block_one_side = ImageTk.PhotoImage(Image.open("Images/1_block.png").resize((33, 33)))
             Ludo(window,block_six_side,block_five_side,block_four_side,block_three_side,block_two_side,block_one_side)
-            make_canvas = Canvas(window)  # Isso pode variar dependendo do seu código
+            make_canvas = Canvas(window)  
             CoinMovement(window, make_canvas)
             LudoUIMethods(window, make_canvas)
             window.mainloop()
