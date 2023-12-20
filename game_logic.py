@@ -40,7 +40,7 @@ class Game_logic:
             self.make_command()
             top.destroy()
         else:
-            messagebox.showerror("Input Error", "Please input number of players between 2 and 4")
+            messagebox.showerror("Input Error", "Coloque um número entre 2 e 4")
 
     def coord_overlap(self, counter_coin, color_coin, path_to_traverse_before_overlap):
         if  color_coin!="red":
