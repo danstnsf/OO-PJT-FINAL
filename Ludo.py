@@ -22,11 +22,11 @@ class Ludo(Tabuleiro,Controles,Pawn):
         self.ButtonActions = LudoUIMethods(self.root, self.canvas)
     def __init__(self, root,six_side_block,five_side_block,four_side_block,three_side_block,two_side_block,one_side_block):
         self.window = root
-        # Make canvas
+        # Fazer canvas
         self.make_canvas = Canvas(self.window, bg="#4d4dff", width=800, height=630)
         self.make_canvas.pack(fill=BOTH,expand=1)
 
-        # Make some containers to store data
+        # containers de data 
         self.made_red_coin = []
         self.made_green_coin = []
         self.made_yellow_coin = []
@@ -40,10 +40,10 @@ class Ludo(Tabuleiro,Controles,Pawn):
         self.block_value_predict = []
         self.total_people_play = []
 
-        # Ludo block all side image store
+        # image store
         self.block_number_side = [one_side_block, two_side_block, three_side_block, four_side_block, five_side_block, six_side_block]
 
-        # Use for store specific position of all coins
+        
         self.red_coord_store = [-1, -1, -1, -1]
         self.green_coord_store = [-1, -1, -1, -1]
         self.yellow_coord_store = [-1, -1, -1, -1]
@@ -54,7 +54,7 @@ class Ludo(Tabuleiro,Controles,Pawn):
         self.yellow_coin_position = [0, 1, 2, 3]
         self.sky_blue_coin_position = [0, 1, 2, 3]
 
-        for index in range(len(self.red_coin_position)):# Specific coin position set to -1 by default
+        for index in range(len(self.red_coin_position)):
             self.red_coin_position[index] = -1
             self.green_coin_position[index] = -1
             self.yellow_coin_position[index] = -1
